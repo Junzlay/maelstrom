@@ -26,7 +26,7 @@ use Illuminate\Support\Facades\Route;
     Route::get('/login', [AuthController::class, 'login'])->name('auth.login');
 // });
 
-// Route::group(['middleware' => 'auth'], function () {
+Route::group(['middleware' => 'auth'], function () {
     Route::get('/', [HomeController::class, 'index'])->name('home');
     Route::get('/about', [HomeController::class, 'about'])->name('about');
     Route::get('/service', [ServiceController::class, 'index'])->name('services.index');
@@ -52,7 +52,7 @@ use Illuminate\Support\Facades\Route;
     Route::get('/purchasehistory', function() {
         return view('profile._purchasehistory');
     })->name('purchasehistory');
-// });
+});
 
 // Route::get('/', function () {
 //     return view('home');
